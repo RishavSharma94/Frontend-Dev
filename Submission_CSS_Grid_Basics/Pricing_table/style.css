@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+header {
+  padding: 20px 0;
+  background-color: #003366;
+  color: white;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 10px;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.pricing-card:hover {
+  transform: scale(1.05);
+  background-color: #e6f2ff;
+}
+
+.pricing-card h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.pricing-card ul li {
+  margin: 5px 0;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: #003366;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #0055aa;
+}
+
+.popular {
+  border: 2px solid #ffcc00;
+  background-color: #fff8cc;
+}

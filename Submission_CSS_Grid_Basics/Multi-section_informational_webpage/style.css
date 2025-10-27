@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #003366;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li {
+  margin-left: 2em;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+main {
+  padding-top: 100px;
+}
+
+section {
+  padding: 80px 10%;
+  color: white;
+  text-align: center;
+  border-bottom: 2px solid #fff;
+}
+
+section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.parallax {
+  background-image: url('paris1.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#culture.parallax {
+  background-image: url('paris2.jpg');
+  background-attachment: fixed;
+}
+
+.gradient-linear {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #333;
+}
+
+.gradient-radial {
+  background: radial-gradient(circle, #6a11cb, #2575fc);
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
