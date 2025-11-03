@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8: Box Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        /* Flex container to center the demonstration */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            gap: 4rem;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        /* Base styles for the visual box */
+        .box {
+            /*
+              These properties are applied to BOTH boxes.
+              - Width: 200px
+              - Padding: 20px (left) + 20px (right) = 40px
+              - Border: 5px (left) + 5px (right) = 10px
+              - Margin: 30px (left) + 30px (right) = 60px
+            */
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            border: 5px solid #e74c3c; /* Border (Red) */
+            margin: 30px;
+            
+            /* Using background-clip to show layers */
+            /* This color will show in the margin area */
+            background-color: #f39c12; /* Margin area color (Orange) */
+            
+            /* This clips the background, making the padding area transparent
+               and showing the orange margin color underneath */
+            background-clip: padding-box;
+        }
+
+        .content {
+            background-color: #3498db; /* Content area (Blue) */
+            color: white;
+            height: 100%; /* Fill the content area */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        /* --- Box Sizing Demonstration --- */
+
+        /* 1. Default (box-sizing: content-box) */
+        /* This is the default browser behavior */
+        .default-box {
+            box-sizing: content-box;
+            /* Final rendered width = width + padding + border
+               = 200px + 40px + 10px = 250px
+            */
+        }
+
+        /* 2. Border-Box */
+        .border-box {
+            box-sizing: border-box;
+            /* Final rendered width = width
+               = 200px
+               The padding and border are pushed *inside* this 200px width.
+               The content area will shrink to make room.
+            */
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+
+        <div class="box-wrapper">
+            <h2>Default (content-box)</h2>
+            <div class="box default-box">
+                <div class="content">Content</div>
+            </div>
+            <p><strong>Total Width: 310px</strong><br>
+                (200px content + 40px padding + 10px border + 60px margin)
+            </p>
+        </div>
+        
+        <div class="box-wrapper">
+            <h2>Border-Box</h2>
+            <div class="box border-box">
+                <div class="content">Content</div>
+            </div>
+            <p><strong>Total Width: 260px</strong><br>
+               (200px total + 60px margin). Padding & border are *inside* the 200px.
+            </p>
+        </div>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q10: Navigation Bar</title>
+    <style>
+        /* Basic reset and page styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        main {
+            padding: 2rem;
+            text-align: center;
+            min-height: 70vh; /* Give some space */
+        }
+
+        /* --- Navbar Styles --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Pushes brand left, menu right */
+            align-items: center;
+            background-color: #333;
+            padding: 0 2rem;
+            flex-wrap: wrap; /* Allows wrapping on small screens */
+        }
+
+        /* Logo/Brand styling */
+        .nav-brand {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 1rem 0;
+        }
+
+        /* Menu list (UL) */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Menu links (A) */
+        .nav-link {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1.5rem 1rem; /* Padding for larger clickable area */
+            border-bottom: 3px solid transparent; /* Placeholder for hover/active */
+            
+            /* Smooth transition for all properties */
+            transition: all 0.3s ease;
+        }
+
+        /* --- Hover and Active States --- */
+
+        .nav-link:hover {
+            background-color: #555;
+            border-bottom-color: #f0ad4e; /* Orange underline on hover */
+        }
+
+        /* Style for the 'active' link */
+        .nav-item.active .nav-link {
+            background-color: #444;
+            border-bottom-color: #d9534f; /* Red underline for active */
+            font-weight: bold;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #f4f4f4;
+            color: #555;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #ddd;
+        }
+
+        /* --- Responsive Media Query --- */
+
+        /* Stacks the navigation when viewport is 700px or less */
+        @media (max-width: 700px) {
+            .navbar {
+                /* Stack brand and menu vertically */
+                flex-direction: column;
+                padding: 0;
+            }
+            
+            .nav-brand {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #444;
+            }
+
+            .nav-menu {
+                /* Stack menu items vertically */
+                flex-direction: column;
+                width: 100%; /* Take full width */
+            }
+            
+            .nav-link {
+                text-align: center; /* Center text */
+                border-bottom: 1px solid #444; /* Separators */
+            }
+            
+            /* Remove borders from hover/active states */
+            .nav-link:hover,
+            .nav-item.active .nav-link {
+                border-bottom-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="nav-brand">Logo</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item active"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Responsive Navigation Bar Page</h1>
+        <p>Resize the browser window below 700px to see the navigation stack vertically.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Simple Footer Text</p>
+    </footer>
+</body>
+</html>

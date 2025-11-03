@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1: Borders and Padding</title>
+    <style>
+        /* Basic page setup */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+
+        /* Flexbox container for alignment */
+        .box-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow boxes to wrap on small screens */
+            justify-content: center; /* Center boxes horizontally */
+            padding: 2rem;
+            gap: 20px; /* Space between boxes */
+        }
+
+        /* Base style for all boxes */
+        .box {
+            width: 150px;
+            height: 100px;
+            background-color: white;
+            
+            /* Demonstrate padding: 20px on all sides */
+            padding: 20px;
+            
+            /* Center text inside the box */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* Transition for the hover effect */
+            transition: border-color 0.3s ease;
+        }
+
+        /* --- Border Styles --- */
+
+        .solid {
+            border: 6px solid #d9534f; /* Red solid */
+        }
+
+        .dashed {
+            border: 6px dashed #5bc0de; /* Blue dashed */
+        }
+
+        .double {
+            border: 8px double #5cb85c; /* Green double */
+        }
+
+        .groove {
+            border: 8px groove #f0ad4e; /* Orange groove */
+        }
+
+        /* --- Border Radius --- */
+        .rounded {
+            border: 6px solid #337ab7; /* Dark blue solid */
+            
+            /* Apply rounded corners */
+            border-radius: 25px;
+        }
+
+        /* --- Hover Effect --- */
+        .box:hover {
+            border-color: #333; /* Change border color to dark grey on hover */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Borders, Padding & Radius</h1>
+    </header>
+    <main>
+        <section class="box-container">
+            <div class="box solid">
+                <p>Solid</p>
+            </div>
+            <div class="box dashed">
+                <p>Dashed</p>
+            </div>
+            <div class="box double">
+                <p>Double</p>
+            </div>
+            <div class="box groove">
+                <p>Groove</p>
+            </div>
+            <div class="box rounded">
+                <p>Rounded</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

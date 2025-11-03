@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2: Height and Width</title>
+    <style>
+        /* Set html and body to 100% height to allow vertical centering */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main container uses Flexbox to center all boxes */
+        .container {
+            display: flex;
+            justify-content: center; /* Horizontal centering */
+            align-items: center;   /* Vertical centering */
+            height: 100%; /* Take full viewport height */
+            padding: 2rem;
+            gap: 2rem;
+            background-color: #f0f0f0;
+            flex-wrap: wrap; /* Allow wrapping */
+        }
+
+        /* Base box style */
+        .box {
+            padding: 1rem;
+            border: 2px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Box 1: Pixel-based units */
+        .box-1 {
+            width: 300px;
+            height: 200px;
+            background-color: #a7c7e7; /* Light blue */
+        }
+
+        /* Box 2: Percentage and EM units */
+        .box-2 {
+            width: 40%; /* 40% of the container's width */
+            height: 15em; /* 15 times the base font size */
+            background-color: #c1e1c1; /* Light green */
+        }
+
+        /* Box 3: VH, min/max, and overflow */
+        .box-3 {
+            width: 300px; /* Base width */
+            height: 30vh; /* 30% of the viewport height */
+            max-width: 350px;  /* Will not grow wider than 350px */
+            min-height: 150px; /* Will not shrink shorter than 150px */
+            background-color: #fdd9b5; /* Light orange */
+            
+            /* Handle content overflow */
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        
+        <div class="box box-1">
+            <h3>Pixels (px)</h3>
+            <p>Width: 300px<br>Height: 200px</p>
+        </div>
+        
+        <div class="box box-2">
+            <h3>Percent/EM (%)</h3>
+            <p>Width: 40% (of container)<br>Height: 15em</p>
+        </div>
+        
+        <div class="box box-3">
+            <h3>VH, Min/Max, Overflow</h3>
+            <p>min-height: 150px<br>max-width: 350px<br>Height: 30vh</p>
+            <p>This box has overflow. When the content is too long, a scrollbar will appear. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non urna ex.</p>
+        </div>
+
+    </main>
+</body>
+</html>

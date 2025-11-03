@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3: Gradients</title>
+    <style>
+        /* Basic page reset */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        /* Fixed Header */
+        header {
+            position: fixed; /* Fixes to the viewport */
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 1rem 0;
+            z-index: 10; /* Ensures it's on top */
+        }
+
+        /* Fixed Footer */
+        footer {
+            position: fixed; /* Fixes to the viewport */
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 0.5rem 0;
+            z-index: 10;
+        }
+
+        /* Main content needs padding to avoid being hidden by header/footer */
+        main {
+            padding-top: 70px; /* Adjust based on header height */
+            padding-bottom: 50px; /* Adjust based on footer height */
+        }
+
+        /* Base style for gradient sections */
+        .gradient-section {
+            height: 100vh; /* Make each section fill the viewport */
+            padding: 2rem;
+            box-sizing: border-box; /* Include padding in height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Linear Gradient with Fixed Attachment */
+        .linear-fixed {
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            
+            /* This fixes the background image relative to the viewport */
+            background-attachment: fixed;
+        }
+
+        /* Radial Gradient */
+        .radial {
+            background: radial-gradient(circle, #ff512f, #dd2476);
+            
+            /* The default is 'scroll', so it moves with the content */
+            background-attachment: scroll;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gradient Showcase</h1>
+    </header>
+
+    <main>
+        <section class="gradient-section linear-fixed">
+            <h2>Linear Gradient (with Fixed Attachment)</h2>
+            <p>This background is fixed, creating a parallax-like effect when you scroll.</p>
+        </section>
+        
+        <section class="gradient-section radial">
+            <h2>Radial Gradient</h2>
+            <p>This background is a standard radial gradient and scrolls with the content.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Fixed Footer</p>
+    </footer>
+</body>
+</html>

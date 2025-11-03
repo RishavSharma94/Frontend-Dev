@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4: Shadows and Depth</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9e9e9;
+            padding: 2rem;
+        }
+
+        h1, h3 {
+            /* Apply text-shadow for depth on headings */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* Flexbox container to arrange cards in a row */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        /* Base card styling */
+        .card {
+            width: 300px;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 10px;
+            
+            /* This transition animates the shadow and transform */
+            transition: all 0.3s ease-out;
+        }
+
+        /* --- Shadow Styles --- */
+
+        /* Card 1: Subtle shadow */
+        .card:nth-child(1) {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card 2: Deeper shadow */
+        .card:nth-child(2) {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Card 3: Inset shadow */
+        .card:nth-child(3) {
+            box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* --- Hover "Lift" Effect --- */
+        /* We exclude the inset card from the lift effect */
+        .card:nth-child(1):hover,
+        .card:nth-child(2):hover {
+            /* Lifts the card up */
+            transform: translateY(-10px);
+            
+            /* Creates a larger, softer shadow to enhance the lift */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+        }
+
+        /* Hover effect for the inset card */
+        .card:nth-child(3):hover {
+            box-shadow: inset 0 8px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Content Cards with Depth</h1>
+    </header>
+    <main>
+        <section class="card-container">
+            
+            <article class="card">
+                <h3>Subtle Shadow</h3>
+                <p>This card has a light, subtle shadow for a small amount of depth.</p>
+            </article>
+            
+            <article class="card">
+                <h3>Deeper Shadow</h3>
+                <p>This card uses a larger, softer shadow to appear further from the page.</p>
+            </article>
+            
+            <article class="card">
+                <h3>Inset Shadow</h3>
+                <p>This card uses an <code>inset</code> shadow to appear pressed into the page.</p>
+            </article>
+
+        </section>
+    </main>
+</body>
+</html>

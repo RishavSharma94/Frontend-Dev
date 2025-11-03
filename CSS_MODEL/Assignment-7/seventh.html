@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q7: Typography</title>
+    <style>
+        /* Base document styling */
+        body {
+            font-family: 'Georgia', 'Times New Roman', Times, serif; /* Serif font for body */
+            font-size: 18px; /* Readable base size */
+            line-height: 1.7; /* Good spacing between lines */
+            background-color: #fafafa;
+            color: #333;
+            padding: 2rem;
+        }
+
+        .typography-showcase {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Font Styling --- */
+
+        h1 {
+            font-family: 'Arial', Helvetica, sans-serif; /* Sans-serif for heading */
+            font-size: 3rem; /* Large size for main title */
+            font-weight: 900; /* Extra bold weight */
+            letter-spacing: -1px; /* Tighter letter spacing */
+            text-align: left;
+            color: #222;
+        }
+
+        .subtitle {
+            font-family: 'Arial', Helvetica, sans-serif;
+            font-size: 1.2rem;
+            font-weight: 300; /* Light weight */
+            font-style: italic;
+            text-align: left;
+            color: #666;
+            margin-top: -1rem;
+        }
+
+        h2 {
+            font-family: 'Arial', Helvetica, sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* --- Text Styling --- */
+
+        /* Paragraph with increased spacing */
+        p:nth-of-type(2) {
+            letter-spacing: 0.5px; /* Adds space between letters */
+            line-height: 1.8; /* Increases space between lines */
+        }
+
+        /* Paragraph with different font and alignment */
+        p:nth-of-type(3) {
+            font-family: 'Arial', Helvetica, sans-serif; /* Sans-serif */
+            text-align: center; /* Center alignment */
+            background-color: #f0f0f0;
+            padding: 1rem;
+        }
+
+        /* --- Inline Element Styling --- */
+
+        strong {
+            color: #c0392b; /* Custom red color */
+            font-weight: 700; /* Default is bold, but we set explicitly */
+        }
+
+        em {
+            color: #2980b9; /* Custom blue color */
+            font-style: italic; /* Default, but set explicitly */
+        }
+
+        mark {
+            background-color: #f1c40f; /* Custom yellow */
+            color: #333;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        /* --- Pseudo-Element Styling --- */
+
+        /* Styles the very first letter of the first paragraph */
+        p:nth-of-type(1)::first-letter {
+            font-size: 4.5rem; /* Much larger */
+            font-weight: bold;
+            color: #2980b9;
+            float: left; /* Allows text to wrap around it */
+            padding-right: 8px;
+            line-height: 0.8;
+        }
+
+        /* Styles the first line of the first paragraph */
+        p:nth-of-type(1)::first-line {
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article class="typography-showcase">
+            <h1>The Art of Digital Typography</h1>
+            
+            <p class="subtitle">An exploration of fonts, spacing, and style</p>
+            
+            <p>This is the first line of the main paragraph. It demonstrates the <code>::first-line</code> pseudo-element. The <code>::first-letter</code> pseudo-element is also applied to this paragraph. Typography is more than just picking fonts; it's about <strong>arranging text</strong> in a readable and aesthetically pleasing way. Good typography guides the reader's eye.</p>
+            
+            <p>We can use different properties to control the look. This paragraph has increased <code>letter-spacing</code> and <code>line-height</code>. We can also <mark>highlight</mark> certain words, or add emphasis with <em>italic text</em>. Notice how the <code>font-family</code> and <code>font-size</code> create a clear hierarchy between the heading and the body text.</p>
+            
+            <h2>A Secondary Heading</h2>
+            <p>This paragraph uses a different font (a sans-serif) to contrast with the main body text (a serif). This demonstrates how to mix font families effectively. The text is aligned to the <strong>center</strong>.</p>
+        </article>
+    </main>
+</body>
+</html>

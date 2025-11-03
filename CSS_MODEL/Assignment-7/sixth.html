@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q6: Transformations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        header {
+            margin: 2rem 0;
+        }
+
+        /* Flexbox container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            padding: 3rem;
+            /* Add perspective for a slight 3D feel */
+            perspective: 1000px;
+        }
+
+        .box-wrapper {
+            /* Height to contain the box, even when transformed */
+            height: 150px;
+            width: 150px;
+        }
+
+        /* Base style for all transformation boxes */
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: #3498db;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            
+            /* Center text in the box */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* This is the key transition */
+            transition: all 0.4s ease;
+        }
+
+        /* --- Hover Transformations --- */
+
+        /* 1. Rotate */
+        .rotate:hover {
+            transform: rotate(45deg);
+            background-color: #2980b9;
+        }
+
+        /* 2. Scale */
+        .scale:hover {
+            transform: scale(1.2); /* Makes the element 20% larger */
+            background-color: #2ecc71;
+        }
+
+        /* 3. Translate */
+        .translate:hover {
+            transform: translate(25px, 25px); /* Moves 25px right and 25px down */
+            background-color: #e67e22;
+        }
+
+        /* 4. Skew */
+        .skew:hover {
+            transform: skew(20deg, 10deg); /* Distorts the element */
+            background-color: #9b59b6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Transformations on Hover</h1>
+    </header>
+    <main class="container">
+        
+        <div class="box-wrapper">
+            <div class="box rotate">Rotate</div>
+            <p>rotate(45deg)</p>
+        </div>
+        
+        <div class="box-wrapper">
+            <div class="box scale">Scale</div>
+            <p>scale(1.2)</p>
+        </div>
+
+        <div class="box-wrapper">
+            <div class="box translate">Translate</div>
+            <p>translate(25px, 25px)</p>
+        </div>
+
+        <div class="box-wrapper">
+            <div class="box skew">Skew</div>
+            <p>skew(20deg, 10deg)</p>
+        </div>
+
+    </main>
+</body>
+</html>
