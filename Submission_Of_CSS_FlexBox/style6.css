@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+    "head head"
+    "side main"
+    "foot foot";
+  grid-template-columns: 200px 1fr;
+  gap: 10px;
+  font-family: sans-serif;
+}
+
+header {
+  grid-area: head;
+  background: #eee;
+  padding: 10px;
+  text-align: center;
+}
+
+.sidebar {
+  grid-area: side;
+  background: #ddd;
+  padding: 10px;
+}
+
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+.post {
+  background: #ccc;
+  padding: 20px;
+}
+
+footer {
+  grid-area: foot;
+  background: #eee;
+  text-align: center;
+  padding: 10px;
+}
+
+@media(max-width:800px) {
+  body {
+    grid-template-areas:
+      "head"
+      "main"
+      "side"
+      "foot";
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+header, main, footer {
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.about, .photo {
+  flex: 1;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  background: #eee;
+}
+
+@media(max-width:700px){
+  main {
+    flex-direction: column;
+  }
+}
