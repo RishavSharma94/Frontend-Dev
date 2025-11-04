@@ -1,0 +1,63 @@
+/* Element selector */
+p {
+    color: #333;
+    line-height: 1.6;
+    padding: 5px;
+}
+
+/* Class selector */
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* ID selector */
+#unique {
+    color: blue;
+    font-size: 18px;
+}
+
+/* Attribute selector - selects all links that open in a new tab */
+a[target="_blank"] {
+    color: red;
+    text-decoration: none;
+}
+
+/* Combinator selectors */
+
+/* Descendant selector */
+div.box p {
+    color: green;
+}
+
+/* Adjacent sibling selector - selects the p just after div */
+div + p {
+    color: purple;
+}
+
+/* General sibling selector - selects all p after div */
+div ~ p {
+    font-style: italic;
+}
+
+/* Basic layout styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+header, footer {
+    background-color: #ddd;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+main {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

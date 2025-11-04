@@ -1,0 +1,74 @@
+body {
+  font-family: Arial;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.box {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+  width: 220px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* hover example */
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  color: red;
+  background-color: #eee;
+}
+
+/* focus example */
+input {
+  padding: 6px;
+}
+
+input:focus {
+  border: 2px solid green;
+  outline: none;
+}
+
+/* active example */
+button {
+  padding: 8px 15px;
+  background-color: lightblue;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: deepskyblue;
+  color: white;
+}
+
+/* nth-child example */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li:nth-child(odd) {
+  background-color: #ddd;
+}
+
+li:nth-child(even) {
+  background-color: #bbb;
+}

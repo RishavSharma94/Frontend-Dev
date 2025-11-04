@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 25px;
+}
+
+/* Flexbox container for buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Basic button styles */
+button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Primary button */
+.primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.primary:hover {
+    background-color: #45a049;
+}
+
+.primary:active {
+    transform: scale(0.98);
+}
+
+/* Secondary button */
+.secondary {
+    background-color: #008CBA;
+    color: white;
+}
+
+.secondary:hover {
+    background-color: #007bb5;
+}
+
+.secondary:active {
+    transform: scale(0.98);
+}
+
+/* Outline button */
+.outline {
+    background-color: white;
+    color: #555;
+    border: 2px solid #555;
+}
+
+.outline:hover {
+    background-color: #555;
+    color: white;
+}
+
+.outline:active {
+    transform: scale(0.98);
+}
+
+/* Disabled button */
+.disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.disabled:focus {
+    outline: none; /* remove focus outline */
+}
+
+/* Focus effect for other buttons */
+button:focus:not(.disabled) {
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.5);
+}
