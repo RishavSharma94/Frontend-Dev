@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive CSS Cheat Sheet</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  padding: 30px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.box {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+.box p {
+  color: #555;
+  line-height: 1.5;
+}
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .box {
+    text-align: left;
+  }
+  .box h2 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #111;
+  }
+  .box p {
+    font-size: 1rem;
+  }
+}
+</style>
+</head>
+<body>
+<h1>Responsive CSS Cheat Sheet</h1>
+<div class="grid">
+  <div class="box">
+    <h2>Filters</h2>
+    <p>Apply visual effects like <b>blur()</b>, <b>grayscale()</b>, <b>sepia()</b>, or <b>brightness()</b> to images and elements using the <code>filter</code> property.</p>
+  </div>
+  <div class="box">
+    <h2>Media Queries</h2>
+    <p>Use <code>@media</code> rules to apply styles based on screen width, height, or device type for responsive layouts.</p>
+  </div>
+  <div class="box">
+    <h2>Responsive Design</h2>
+    <p>Design layouts that adapt to different screen sizes using relative units, flexible grids, and breakpoints.</p>
+  </div>
+  <div class="box">
+    <h2>Typography</h2>
+    <p>Scale font sizes smoothly with <code>clamp()</code> or <code>vw</code> units for better readability on all devices.</p>
+  </div>
+</div>
+</body>
+</html>

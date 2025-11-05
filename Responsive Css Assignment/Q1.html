@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Image Filter Gallery</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+.image-container {
+  text-align: center;
+}
+.image-container img {
+  width: 100%;
+  height: auto;
+  transition: filter 0.5s ease;
+}
+.image1 img { filter: blur(3px); }
+.image2 img { filter: grayscale(100%); }
+.image3 img { filter: sepia(100%); }
+.image4 img { filter: brightness(70%); }
+.image5 img { filter: contrast(200%); }
+.image6 img { filter: hue-rotate(90deg); }
+.image-container img:hover {
+  filter: none;
+}
+.caption {
+  margin-top: 8px;
+  font-size: 16px;
+}
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+<h2>Responsive Image Filter Gallery</h2>
+<div class="gallery">
+  <div class="image-container image1">
+    <img src="https://via.placeholder.com/300" alt="Image 1">
+    <div class="caption">Blur Filter</div>
+  </div>
+  <div class="image-container image2">
+    <img src="https://via.placeholder.com/300" alt="Image 2">
+    <div class="caption">Grayscale Filter</div>
+  </div>
+  <div class="image-container image3">
+    <img src="https://via.placeholder.com/300" alt="Image 3">
+    <div class="caption">Sepia Filter</div>
+  </div>
+  <div class="image-container image4">
+    <img src="https://via.placeholder.com/300" alt="Image 4">
+    <div class="caption">Brightness Filter</div>
+  </div>
+  <div class="image-container image5">
+    <img src="https://via.placeholder.com/300" alt="Image 5">
+    <div class="caption">Contrast Filter</div>
+  </div>
+  <div class="image-container image6">
+    <img src="https://via.placeholder.com/300" alt="Image 6">
+    <div class="caption">Hue-Rotate Filter</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filter Cards with Animation</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 20px;
+  width: 280px;
+  transition: all 0.3s ease;
+}
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+.card h3 {
+  margin-top: 15px;
+  font-size: 1.3rem;
+}
+.card p {
+  font-size: 1rem;
+  margin-top: 8px;
+  color: #555;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+.card:hover img {
+  filter: none;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200" alt="Profile 1">
+    <h3>John Doe</h3>
+    <p>Web Developer</p>
+  </div>
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200" alt="Profile 2">
+    <h3>Jane Smith</h3>
+    <p>Graphic Designer</p>
+  </div>
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200" alt="Profile 3">
+    <h3>Mark Wilson</h3>
+    <p>UI/UX Designer</p>
+  </div>
+</div>
+</body>
+</html>

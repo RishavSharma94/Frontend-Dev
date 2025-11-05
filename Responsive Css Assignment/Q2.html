@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Homepage</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: 15px 30px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  gap: 20px;
+}
+.box {
+  background: #f4f4f4;
+  border-radius: 10px;
+  width: 30%;
+  min-width: 220px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.box:hover {
+  transform: scale(1.05);
+}
+footer {
+  text-align: center;
+  background: #222;
+  color: white;
+  padding: 15px 0;
+}
+@media (max-width: 750px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+  .box {
+    width: 80%;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">MyLogo</div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="box">Feature 1</div>
+  <div class="box">Feature 2</div>
+  <div class="box">Feature 3</div>
+</main>
+<footer>
+  &copy; 2025 My Website. All rights reserved.
+</footer>
+</body>
+</html>
