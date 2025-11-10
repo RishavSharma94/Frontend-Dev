@@ -1,0 +1,4 @@
+/* styles.css for Company Landing Page */
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+header .navbar-brand { letter-spacing: 0.5px; }
+section.bg-primary { background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%); }

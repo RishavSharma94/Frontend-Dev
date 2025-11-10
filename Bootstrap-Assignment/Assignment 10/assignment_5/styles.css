@@ -1,0 +1,7 @@
+:root {
+  --bs-primary: #6f42c1;
+  --bs-font-sans-serif: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+body { font-family: var(--bs-font-sans-serif); background:#f8f9fa; }
+.site-title { color: var(--bs-primary); font-weight:700; }
+.themed-card { border-top: 4px solid var(--bs-primary); }
