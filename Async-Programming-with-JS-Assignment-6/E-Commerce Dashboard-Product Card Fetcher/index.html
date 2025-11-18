@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Dashboard</title>
+    <style>
+        .product-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+        }
+        .product-card img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Products</h2>
+    <div id="productContainer"></div>
+
+    <script>
+        const container = document.getElementById("productContainer");
+
+        async function fetchProducts() {
+            try {
+                const response = await fetch("https://fakestoreapi.com/products");
+                if(!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                const products = await response.json();
+
+                products.forEach(product => {
+                    console.log("Product:", product.title);
+                    console.log("Price: $" + product.price);
+                    console.log("Image:", product.image);
+
+                    const card = document.createElement("div");
+                    card.className = "product-card";
+
+                    const img = document.createElement("img");
+                    img.src = product.image;
+
+                    const title = document.createElement("h4");
+                    title.textContent = product.title;
+
+                    const price = document.createElement("p");
+                    price.textContent = "$" + product.price;
+
+                    card.appendChild(img);
+                    card.appendChild(title);
+                    card.appendChild(price);
+
+                    container.appendChild(card);
+                });
+
+            } catch(error) {
+                console.log("Failed to load products. Please try again.");
+            }
+        }
+
+        fetchProducts();
+    </script>
+</body>
+</html>
