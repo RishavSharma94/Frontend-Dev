@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Form Builder</title>
+    <style>
+        input {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 200px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dynamic Form</h2>
+    <div id="formContainer"></div>
+    <button id="submitBtn">Submit</button>
+
+    <script>
+        class FormBuilder {
+            constructor(fields) {
+                this.fields = fields;
+            }
+
+            renderForm(containerId) {
+                const container = document.getElementById(containerId);
+                let formHTML = '';
+                this.fields.forEach(field => {
+                    formHTML += `<label>${field.label}</label>`;
+                    formHTML += `<input type="${field.type}" id="${field.label}">`;
+                });
+                container.innerHTML = formHTML;
+            }
+
+            getFormData() {
+                let data = {};
+                this.fields.forEach(field => {
+                    const input = document.getElementById(field.label);
+                    data[field.label] = input.value;
+                });
+                return data;
+            }
+        }
+
+        const fields = [
+            {type: 'text', label: 'Username'},
+            {type: 'email', label: 'Email'},
+            {type: 'password', label: 'Password'},
+            {type: 'number', label: 'Age'}
+        ];
+
+        const form = new FormBuilder(fields);
+        form.renderForm('formContainer');
+
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            const formData = form.getFormData();
+            console.log("Form Data:", formData);
+            alert("Check console for submitted data!");
+        });
+    </script>
+</body>
+</html>

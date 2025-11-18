@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User Object</title>
+    <style>
+        input {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 250px;
+        }
+        #userDetails {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid black;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Edit User Details</h2>
+    <form id="userForm">
+        Name:
+        <input type="text" id="name" value="Akash">
+        Email:
+        <input type="email" id="email" value="akash@mail.com">
+        Age:
+        <input type="number" id="age" value="21">
+        <button type="submit">Update User</button>
+    </form>
+
+    <div id="userDetails"></div>
+
+    <script>
+        let user = { name: "Akash", email: "akash@mail.com", age: 21 };
+
+        const form = document.getElementById("userForm");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const ageInput = document.getElementById("age");
+        const userDiv = document.getElementById("userDetails");
+
+        function displayUser() {
+            userDiv.innerHTML = `
+                <h3>User Details</h3>
+                Name: ${user.name} <br>
+                Email: ${user.email} <br>
+                Age: ${user.age}
+            `;
+        }
+
+        displayUser();
+
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+            user.name = nameInput.value;
+            user.email = emailInput.value;
+            user.age = Number(ageInput.value);
+            displayUser();
+        });
+    </script>
+</body>
+</html>

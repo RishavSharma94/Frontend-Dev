@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Builder</title>
+    <style>
+        input, textarea {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 300px;
+        }
+        .error {
+            border: 2px solid red;
+        }
+        .success {
+            border: 2px solid green;
+        }
+        span {
+            color: red;
+            font-size: 12px;
+        }
+        #resumeData {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid black;
+            width: 350px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h2>Resume Builder</h2>
+    <form id="resumeForm">
+        Name:
+        <input type="text" id="name">
+        <span id="nameError"></span>
+
+        Email:
+        <input type="text" id="email">
+        <span id="emailError"></span>
+
+        Skills (comma separated):
+        <textarea id="skills"></textarea>
+
+        GitHub:
+        <input type="text" id="github">
+        <span id="githubError"></span>
+
+        LinkedIn:
+        <input type="text" id="linkedin">
+        <span id="linkedinError"></span>
+
+        <button type="submit">Build Resume</button>
+    </form>
+
+    <div id="resumeData"></div>
+
+    <script>
+        const form = document.getElementById("resumeForm");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const skillsInput = document.getElementById("skills");
+        const githubInput = document.getElementById("github");
+        const linkedinInput = document.getElementById("linkedin");
+
+        const nameError = document.getElementById("nameError");
+        const emailError = document.getElementById("emailError");
+        const githubError = document.getElementById("githubError");
+        const linkedinError = document.getElementById("linkedinError");
+        const resumeDiv = document.getElementById("resumeData");
+
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+            let valid = true;
+
+            if(nameInput.value.trim() === "") {
+                nameInput.classList.add("error");
+                nameInput.classList.remove("success");
+                nameError.textContent = "Name is required";
+                valid = false;
+            } else {
+                nameInput.classList.remove("error");
+                nameInput.classList.add("success");
+                nameError.textContent = "";
+            }
+
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+            if(!emailRegex.test(emailInput.value)) {
+                emailInput.classList.add("error");
+                emailInput.classList.remove("success");
+                emailError.textContent = "Enter a valid email";
+                valid = false;
+            } else {
+                emailInput.classList.remove("error");
+                emailInput.classList.add("success");
+                emailError.textContent = "";
+            }
+
+            if(!/^https:\/\/.+/.test(githubInput.value)) {
+                githubInput.classList.add("error");
+                githubInput.classList.remove("success");
+                githubError.textContent = "GitHub link must start with https://";
+                valid = false;
+            } else {
+                githubInput.classList.remove("error");
+                githubInput.classList.add("success");
+                githubError.textContent = "";
+            }
+
+            if(!/^https:\/\/.+/.test(linkedinInput.value)) {
+                linkedinInput.classList.add("error");
+                linkedinInput.classList.remove("success");
+                linkedinError.textContent = "LinkedIn link must start with https://";
+                valid = false;
+            } else {
+                linkedinInput.classList.remove("error");
+                linkedinInput.classList.add("success");
+                linkedinError.textContent = "";
+            }
+
+            if(valid) {
+                const resume = {
+                    name: nameInput.value,
+                    email: emailInput.value,
+                    skills: skillsInput.value.split(',').map(s => s.trim()),
+                    github: githubInput.value,
+                    linkedin: linkedinInput.value
+                };
+                resumeDiv.textContent = JSON.stringify(resume, null, 4);
+                form.reset();
+                nameInput.classList.remove("success");
+                emailInput.classList.remove("success");
+                githubInput.classList.remove("success");
+                linkedinInput.classList.remove("success");
+            }
+        });
+    </script>
+</body>
+</html>
