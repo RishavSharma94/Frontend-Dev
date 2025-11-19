@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List Manager</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    #productInput {
+      padding: 8px;
+      font-size: 16px;
+      width: 250px;
+    }
+
+    #addBtn {
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #productList {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    #productList li {
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .editBox {
+      font-size: 16px;
+      padding: 5px;
+      width: 70%;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Dynamic Product List Manager</h2>
+
+  <input id="productInput" placeholder="Enter product">
+  <button id="addBtn">Add</button>
+
+  <ul id="productList"></ul>
+
+  <script src="product-manager.js"></script>
+
+</body>
+</html>

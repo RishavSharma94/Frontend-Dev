@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 150px);
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 150px;
+      height: 120px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 10px;
+    }
+
+    .modal-content img {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Image Gallery</h2>
+
+  <div class="gallery">
+    <img src="https://picsum.photos/id/101/200" class="image">
+    <img src="https://picsum.photos/id/102/200" class="image">
+    <img src="https://picsum.photos/id/103/200" class="image">
+    <img src="https://picsum.photos/id/104/200" class="image">
+    <img src="https://picsum.photos/id/105/200" class="image">
+    <img src="https://picsum.photos/id/106/200" class="image">
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content" id="modalContent">
+      <img id="modalImg">
+    </div>
+  </div>
+
+  <script src="image-gallery.js"></script>
+
+</body>
+</html>

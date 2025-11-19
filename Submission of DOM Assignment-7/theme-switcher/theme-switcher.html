@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Switcher</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    [data-theme="light"] {
+      background: #ffffff;
+      color: #000;
+    }
+
+    [data-theme="dark"] {
+      background: #111;
+      color: #fff;
+    }
+
+    [data-theme="blue"] {
+      background: #d8e9ff;
+      color: #003366;
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+  <h2>Theme Switcher</h2>
+
+  <button data-set="light">Light</button>
+  <button data-set="dark">Dark</button>
+  <button data-set="blue">Blue</button>
+
+  <script src="theme-switcher.js"></script>
+</body>
+</html>

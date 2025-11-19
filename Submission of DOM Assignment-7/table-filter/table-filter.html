@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Filter</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    table {
+      width: 400px;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    #noResult {
+      margin-top: 15px;
+      font-size: 18px;
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Table Filter</h2>
+
+  <input id="searchBox" placeholder="Search students...">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>CGPA</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <tr><td>Rahul</td><td>CSE</td><td>8.2</td></tr>
+      <tr><td>Priya</td><td>ECE</td><td>9.1</td></tr>
+      <tr><td>Aman</td><td>ME</td><td>7.5</td></tr>
+      <tr><td>Riya</td><td>CSE</td><td>9.3</td></tr>
+      <tr><td>Karan</td><td>IT</td><td>8.7</td></tr>
+    </tbody>
+  </table>
+
+  <div id="noResult">No results found</div>
+
+  <script src="table-filter.js"></script>
+
+</body>
+</html>
