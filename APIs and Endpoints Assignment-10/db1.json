@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop Pro",
+      "price": 55000,
+      "image": "laptop.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Gaming Mouse",
+      "price": 1500,
+      "image": "mouse.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Smartphone X",
+      "price": 30000,
+      "image": "phone.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Bluetooth Speaker",
+      "price": 2000,
+      "image": "speaker.jpg"
+    },
+    {
+      "id": 5,
+      "name": "LED Monitor",
+      "price": 12000,
+      "image": "monitor.jpg"
+    }
+  ]
+}
