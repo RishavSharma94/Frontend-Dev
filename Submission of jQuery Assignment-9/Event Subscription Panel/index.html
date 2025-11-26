@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Subscription Panel</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        #panel {
+            width: 330px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        .topic {
+            padding: 8px;
+            margin: 6px 0;
+            border: 1px solid #aaa;
+            cursor: pointer;
+        }
+
+        #msg {
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        button {
+            margin-right: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="panel">
+    <div class="topic">Music Events</div>
+    <div class="topic">Sports Events</div>
+</div>
+
+<button id="subBtn">Subscribe</button>
+<button id="unsubBtn">Unsubscribe</button>
+<button id="addTopic">Add Topic</button>
+<button id="removeTopic">Remove First Topic</button>
+
+<div id="msg"></div>
+
+<script>
+    let notifications = false;
+
+    function showMessage(text) {
+        $("#msg").text(text);
+    }
+
+    $("#subBtn").click(function() {
+        notifications = true;
+        showMessage("Notifications enabled");
+    });
+
+    $("#unsubBtn").click(function() {
+        notifications = false;
+        showMessage("Notifications disabled");
+    });
+
+    $("#panel").on("click", ".topic", function() {
+        if (notifications) {
+            showMessage("Subscribed to: " + $(this).text());
+        } else {
+            showMessage("Enable notifications first");
+        }
+    });
+
+    $("#addTopic").click(function() {
+        $("#panel").append('<div class="topic">New Topic</div>');
+        showMessage("New topic added");
+    });
+
+    $("#removeTopic").click(function() {
+        $("#panel").off("click", ".topic");
+        $("#panel .topic").first().remove();
+        $("#panel").on("click", ".topic", function() {
+            if (notifications) {
+                showMessage("Subscribed to: " + $(this).text());
+            } else {
+                showMessage("Enable notifications first");
+            }
+        });
+        showMessage("First topic removed");
+    });
+</script>
+
+</body>
+</html>

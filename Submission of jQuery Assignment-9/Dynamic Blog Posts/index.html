@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Blog Posts</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .post { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        .highlight { background-color: yellow; }
+        .tag { color: blue; font-weight: bold; margin-right: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Blog Posts</h2>
+    <button id="addPost">Add New Post</button>
+    <button id="prependPost">Prepend Featured Post</button>
+    <button id="removePost">Remove Last Post</button>
+    <button id="highlightKeyword">Highlight Keyword</button>
+
+    <div id="blogPosts">
+        <div class="post">Post 1 about JavaScript</div>
+        <div class="post">Post 2 about HTML</div>
+        <div class="post">Post 3 about CSS</div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#addPost').click(function() {
+                $('#blogPosts').append('<div class="post">New Post added dynamically</div>');
+            });
+
+            $('#prependPost').click(function() {
+                $('#blogPosts').prepend('<div class="post">Featured Post at top</div>');
+            });
+
+            $('#removePost').click(function() {
+                $('#blogPosts .post:last').remove();
+            });
+
+            $('.post').each(function() {
+                $(this).before('<span class="tag">[Tag]</span>');
+                $(this).after('<span class="tag">[End]</span>');
+            });
+
+            $('#highlightKeyword').click(function() {
+                $('.post').each(function() {
+                    var text = $(this).text();
+                    if(text.includes('JavaScript')) $(this).addClass('highlight');
+                    else $(this).removeClass('highlight');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

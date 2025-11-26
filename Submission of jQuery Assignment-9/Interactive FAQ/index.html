@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive FAQ</title>
+    <style>
+        .faq {
+            width: 350px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 6px 0;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 6px;
+        }
+
+        .question:hover {
+            color: blue;
+        }
+
+        .highlight {
+            background: #f0f8ff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="faq">
+    <div class="question">What is your return policy?</div>
+    <div class="answer">
+        You can return within 7 days.
+        <br><input type="text" placeholder="Type here">
+    </div>
+</div>
+
+<div class="faq">
+    <div class="question">Do you offer free shipping?</div>
+    <div class="answer">
+        Yes, on orders above $20.
+        <br><input type="text" placeholder="Type here">
+    </div>
+</div>
+
+<div class="faq">
+    <div class="question">How can I contact support?</div>
+    <div class="answer">
+        You can email us anytime.
+        <br><input type="text" placeholder="Type here">
+    </div>
+</div>
+
+<script>
+    let questions = document.querySelectorAll(".question");
+    let answers = document.querySelectorAll(".answer");
+
+    questions.forEach(function(q) {
+        q.addEventListener("click", function() {
+            let ans = q.nextElementSibling;
+            ans.style.display = ans.style.display === "block" ? "none" : "block";
+        });
+
+        q.addEventListener("dblclick", function() {
+            answers.forEach(function(a) {
+                a.style.display = "none";
+            });
+        });
+    });
+
+    let inputs = document.querySelectorAll("input");
+
+    inputs.forEach(function(inp) {
+        inp.addEventListener("focus", function() {
+            inp.closest(".faq").classList.add("highlight");
+        });
+
+        inp.addEventListener("blur", function() {
+            inp.closest(".faq").classList.remove("highlight");
+        });
+    });
+</script>
+
+</body>
+</html>

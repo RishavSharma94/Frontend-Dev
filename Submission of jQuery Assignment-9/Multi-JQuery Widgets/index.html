@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-jQuery Widgets</title>
+    <style>
+        .widget { display: inline-block; padding: 10px; margin: 5px; border: 1px solid #ccc; cursor: pointer; }
+        .active { background-color: yellow; }
+        .tooltip { display: none; position: absolute; background: black; color: white; padding: 5px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h2>Dashboard Widgets</h2>
+    <div class="widget" id="w1">Widget 1</div>
+    <div class="widget" id="w2">Widget 2</div>
+    <div class="widget" id="w3">Widget 3</div>
+
+    <button id="showModal">Show Notification</button>
+    <div id="modal" style="display:none; border:1px solid #000; padding:20px; background:#eee;">This is a notification!</div>
+
+    <div class="tooltip" id="tooltip">Tooltip Info</div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        var jq1 = jQuery.noConflict(true);
+
+        jq1(document).ready(function(){
+            var widgets = jq1('.widget');
+            var index = 0;
+            setInterval(function(){
+                widgets.removeClass('active');
+                widgets.eq(index).addClass('active');
+                index = (index + 1) % widgets.length;
+            }, 2000);
+
+            jq1('.widget').click(function(){
+                jq1('.widget').removeClass('active');
+                jq1(this).addClass('active');
+            });
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        var jq2 = jQuery.noConflict(true);
+
+        jq2(document).ready(function(){
+            jq2('#showModal').click(function(){
+                jq2('#modal').fadeIn().delay(2000).fadeOut();
+            });
+
+            jq2('.widget').hover(function(e){
+                jq2('#tooltip').text('Info about ' + jq2(this).text())
+                                .css({top: e.pageY+10, left: e.pageX+10})
+                                .show();
+            }, function(){
+                jq2('#tooltip').hide();
+            });
+        });
+    </script>
+</body>
+</html>

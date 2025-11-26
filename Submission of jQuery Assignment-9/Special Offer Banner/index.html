@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Special Offer Banner</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .banner {
+            width: 300px;
+            padding: 15px;
+            margin: 10px 0;
+            background: lightyellow;
+            border: 1px solid #ccc;
+            display: none;
+        }
+
+        button {
+            margin-right: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="b1" class="banner">Special Offer 1</div>
+<div id="b2" class="banner">Special Offer 2</div>
+<div id="b3" class="banner">Special Offer 3</div>
+
+<button id="hideBtn">Hide</button>
+<button id="showBtn">Show</button>
+<button id="slideBtn">Slide Up/Down</button>
+<button id="fadeBtn">Fade In/Out</button>
+
+<script>
+    let banners = $(".banner");
+    let index = 0;
+
+    banners.eq(0).show();
+
+    $("#hideBtn").click(function() {
+        banners.hide();
+    });
+
+    $("#showBtn").click(function() {
+        banners.show();
+    });
+
+    $("#slideBtn").click(function() {
+        banners.slideToggle();
+    });
+
+    $("#fadeBtn").click(function() {
+        if (banners.is(":visible")) {
+            banners.fadeOut();
+        } else {
+            banners.fadeIn();
+        }
+    });
+
+    setInterval(function() {
+        banners.fadeOut();
+        index = (index + 1) % banners.length;
+        banners.eq(index).fadeIn();
+    }, 5000);
+</script>
+
+</body>
+</html>

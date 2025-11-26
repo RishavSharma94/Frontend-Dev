@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Courses</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        #courses div {
+            padding: 6px;
+            border: 1px solid #ccc;
+            margin: 6px 0;
+        }
+
+        #count {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #clear {
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" id="search" placeholder="Search courses">
+<button id="clear">Clear</button>
+
+<div id="courses">
+    <div>Web Development</div>
+    <div>Data Science</div>
+    <div>Machine Learning</div>
+    <div>Cyber Security</div>
+    <div>Cloud Computing</div>
+</div>
+
+<div id="count"></div>
+
+<script>
+    function updateCount() {
+        let visible = $("#courses div:visible").length;
+        $("#count").text("Matched Courses: " + visible);
+    }
+
+    $("#search").keyup(function() {
+        let text = $(this).val().toLowerCase();
+
+        $("#courses div").each(function() {
+            let c = $(this).text().toLowerCase();
+
+            if (c.includes(text)) {
+                $(this).show();
+                $(this).css("background", "#e9f4ff");
+            } else {
+                $(this).hide();
+                $(this).css("background", "white");
+            }
+        });
+
+        updateCount();
+    });
+
+    $("#clear").click(function() {
+        $("#search").val("");
+        $("#courses div").show();
+        $("#courses div").css("background", "white");
+        updateCount();
+    });
+
+    updateCount();
+</script>
+
+</body>
+</html>

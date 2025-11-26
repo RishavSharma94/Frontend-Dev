@@ -1,0 +1,38 @@
+.product {
+    width: 160px;
+    border: 1px solid #bbb;
+    padding: 12px;
+    margin: 10px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+.details {
+    display: none;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.product:hover .details {
+    display: block;
+}
+
+.highlight {
+    background: #eef7ff;
+}
+
+.fav {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.selected {
+    color: red;
+}
+
+.product[discount="yes"] {
+    border-color: green;
+}

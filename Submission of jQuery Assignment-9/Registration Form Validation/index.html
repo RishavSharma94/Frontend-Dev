@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        input { display: block; margin: 10px 0; padding: 5px; }
+        .error { border: 2px solid red; }
+        .success { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="regForm">
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button type="submit">Register</button>
+    </form>
+    <p id="message"></p>
+
+    <script>
+        $(document).ready(function() {
+            var existingEmails = ["test@example.com", "user@domain.com"];
+
+            $('#regForm').submit(function(e) {
+                e.preventDefault();
+                var valid = true;
+                $('#message').text('');
+                $('input').css('border','1px solid #ccc');
+
+                var name = $('#name').val().trim();
+                var email = $('#email').val().trim();
+                var password = $('#password').val();
+
+                if(name === "") { $('#name').addClass('error'); valid = false; }
+                if(email === "" || !email.includes('@') || existingEmails.includes(email)) { $('#email').addClass('error'); valid = false; }
+                if(password.length < 8) { $('#password').addClass('error'); valid = false; }
+
+                if(valid) $('#message').text('Registration Successful!').addClass('success');
+            });
+
+            $('input').on('input', function() {
+                $(this).removeClass('error');
+            });
+        });
+    </script>
+</body>
+</html>

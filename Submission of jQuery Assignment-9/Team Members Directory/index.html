@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Members Directory</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .dept {
+            border: 1px solid #ccc;
+            margin: 12px 0;
+            padding: 10px;
+            width: 350px;
+        }
+
+        .manager {
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 6px;
+        }
+
+        .employee {
+            padding-left: 15px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        .info {
+            display: none;
+            padding-left: 25px;
+            font-size: 14px;
+        }
+
+        .highlight {
+            background: #e8f3ff;
+        }
+
+        .randomHighlight {
+            background: #ffe8e8;
+        }
+    </style>
+</head>
+<body>
+
+<div id="sales" class="dept">
+    <div class="manager">Manager: John</div>
+    <div class="employee">Mike</div>
+    <div class="info">Email: mike@mail.com</div>
+    <div class="employee">Sara</div>
+    <div class="info">Email: sara@mail.com</div>
+</div>
+
+<div id="tech" class="dept">
+    <div class="manager">Manager: Alice</div>
+    <div class="employee">David</div>
+    <div class="info">Email: david@mail.com</div>
+    <div class="employee">Emma</div>
+    <div class="info">Email: emma@mail.com</div>
+</div>
+
+<button id="randomBtn">Highlight Random Employee + Siblings</button>
+<button id="toggleTeams">Collapse/Expand Teams</button>
+
+<script>
+    $(".manager").click(function() {
+        $(".employee").removeClass("highlight");
+        $(this).parent().children(".employee").addClass("highlight");
+    });
+
+    $(".employee").hover(function() {
+        $(this).next(".info").show();
+    }, function() {
+        $(this).next(".info").hide();
+    });
+
+    $(".dept").click(function() {
+        $(".dept .employee").removeClass("highlight");
+        $(this).children(".employee").addClass("highlight");
+    });
+
+    $("#randomBtn").click(function() {
+        $(".employee").removeClass("randomHighlight");
+        let all = $(".employee");
+        let pick = all.eq(Math.floor(Math.random() * all.length));
+        pick.addClass("randomHighlight");
+        pick.siblings(".employee").addClass("randomHighlight");
+    });
+
+    let collapsed = false;
+    $("#toggleTeams").click(function() {
+        if (!collapsed) {
+            $(".dept").find(".employee, .info").hide();
+            collapsed = true;
+        } else {
+            $(".dept").find(".employee, .info").show();
+            collapsed = false;
+        }
+    });
+</script>
+
+</body>
+</html>
